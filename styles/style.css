@@ -61,6 +61,11 @@ header {
     box-shadow: var(--shadow);
 }
 
+section {
+    background-color: rgba(0,0,0,0);
+    border-style: none;
+    display: flex;
+}
 
 h2 {
     font-size: 1.8rem;
@@ -88,4 +93,11 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+}
+
+body {
+    background-image: url('../assets/background.png');
+    background-size: 1905px 1000px;
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
