@@ -29,6 +29,10 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
+    background-image: url('../assets/background.png');
+    background-size: 1905px 1000px;
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
 
 main {
@@ -126,10 +130,15 @@ footer {
     box-shadow: var(--shadow);
 }
 
-body {
-    background-image: url('../assets/background.png');
-    background-size: 1905px 1000px;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    z-index: 0;
+select {
+    margin-top: 3px;
+}
+
+#player-img.killed {
+    transform: rotate(-90deg);
+    z-index: 2;
+}
+
+#perks.hidden {
+    display: none;
 }

@@ -5,6 +5,7 @@ const goblinDiv = document.querySelector('.goblins');
 const currentHp = document.getElementById('hp-left');
 const defeatedEl = document.getElementById('defeated');
 const perkSelect = document.getElementById('perks');
+const player = document.getElementById('player-img');
 
 // let state
 let playerHitChance = 0.5;
@@ -15,22 +16,14 @@ let defeatCount = 0;
 let goblins = [{ name: 'Terry', hp: 1, }, { name: 'Plate Goblin Leader', hp: 5 }];
 let playerHp = 10;
 // set event listeners 
-
 perkSelect.addEventListener('change', () => {
     switch (perkSelect.value) {
-        case 'none' :
-            playerDamage = 1;
-            goblinDamage = 2;
-            playerHitChance = 0.5;
-            goblinHitChance = 0.2;
-            playerHp = 10;
-            alert('Perks removed');
-            break;
         case 'double-hit' :
             playerDamage = 2;
             playerHitChance = 0.4;
             goblinHitChance = 0.3;
             alert('You hit twice as hard, but are less likely to hit and more likely to get hit');
+            perkSelect.classList.add('hidden');
             break;
         case 'hp-boost' :
             playerDamage = 1;
@@ -39,6 +32,7 @@ perkSelect.addEventListener('change', () => {
             playerHp = 15;
             alert('You have extra health, but are way more likely to get hit');
             displayPlayerStats();
+            perkSelect.classList.add('hidden');
             break;
     }
 });
@@ -97,6 +91,7 @@ function goblinClickHandler(goblin) {
         if (playerHp <= 0) {
             alert('You\'ve been slain, another victim of the plate goblin revolution');
             playerHp = 0;
+            player.classList.add('killed');
             displayPlayerStats();
         }
     }
