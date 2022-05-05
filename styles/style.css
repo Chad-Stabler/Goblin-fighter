@@ -139,6 +139,24 @@ select {
     z-index: 2;
 }
 
+#hp-mod-perk {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(3, 42, 58);
+    border-radius: 50%;
+}
+
+#double-hit-perk {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(3, 42, 58);
+    border-radius: 50%;
+}
+
+img.hidden {
+    display: none;
+}
+
 #perks.hidden {
     display: none;
 }

@@ -6,6 +6,8 @@ const currentHp = document.getElementById('hp-left');
 const defeatedEl = document.getElementById('defeated');
 const perkSelect = document.getElementById('perks');
 const player = document.getElementById('player-img');
+const hpPerk = document.getElementById('hp-mod-perk');
+const dmgPerk = document.getElementById('double-hit-perk');
 
 // let state
 let playerHitChance = 0.5;
@@ -24,6 +26,7 @@ perkSelect.addEventListener('change', () => {
             goblinHitChance = 0.3;
             alert('You hit twice as hard, but are less likely to hit and more likely to get hit');
             perkSelect.classList.add('hidden');
+            dmgPerk.classList.remove('hidden');
             break;
         case 'hp-boost' :
             playerDamage = 1;
@@ -33,6 +36,7 @@ perkSelect.addEventListener('change', () => {
             alert('You have extra health, but are way more likely to get hit');
             displayPlayerStats();
             perkSelect.classList.add('hidden');
+            hpPerk.classList.remove('hidden');
             break;
     }
 });
