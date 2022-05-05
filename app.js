@@ -5,9 +5,9 @@ const goblinDiv = document.querySelector('.goblins');
 
 // let state
 let goblins = [{ name: 'Terry', hp: 1, }, { name: 'Plate Goblin Leader', hp: 5 }];
+let playerHp = 10;
 // set event listeners 
 form.addEventListener('submit', (e) => {
-    console.log(e);
     e.preventDefault();
     const newData = new FormData(form);
     let gobName = newData.get('goblin-name');
@@ -19,13 +19,20 @@ form.addEventListener('submit', (e) => {
 function displayGoblins() {
     goblinDiv.textContent = '';
     for (let gob of goblins) {
-        console.log(`logging ${gob.name}`);
         const newDiv = renderGoblin(gob);
+        newDiv.addEventListener('click', () => {
+            goblinClickHandler(gob);
+        });
         goblinDiv.append(newDiv);
     }
 }
 
 displayGoblins();
+
+function goblinClickHandler(goblin) {
+    if (goblin.hp === 0) return;
+    if (playerHp === 0) return;
+}
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
