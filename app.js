@@ -45,6 +45,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     const newData = new FormData(form);
     let gobName = newData.get('goblin-name');
+    if (gobName === '') {
+        gobName = `Goblin #${Math.floor(Math.random() * 1000)}`;
+    }
     const newGob = { name: gobName, hp: Math.ceil(Math.random() * 5), };
     goblins.push(newGob);
     displayGoblins();
