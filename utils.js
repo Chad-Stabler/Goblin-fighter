@@ -9,9 +9,9 @@ export function renderGoblin(goblin) {
 
     p2.textContent = goblin.hp < 0 ? 0 : goblin.hp;
     
-    p3.textContent = goblin.hp < 0 ? '☠️' : '👺';
+    p3.textContent = goblin.hp > 0 ? '👺' : '☠️';
     if (goblin.hp <= 0) {
-        goblin.classList.add('dead');
+        div.classList.add('dead');
     }
     div.append(p1, p3, p2);
     return div;
