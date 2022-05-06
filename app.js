@@ -8,6 +8,7 @@ const perkSelect = document.getElementById('perks');
 const player = document.getElementById('player-img');
 const hpPerk = document.getElementById('hp-mod-perk');
 const dmgPerk = document.getElementById('double-hit-perk');
+const goldPerk = document.getElementById('gold-perk');
 
 // let state
 let playerHitChance = 0.5;
@@ -37,6 +38,17 @@ perkSelect.addEventListener('change', () => {
             displayPlayerStats();
             perkSelect.classList.add('hidden');
             hpPerk.classList.remove('hidden');
+            break;
+        case 'golden-elixur' :
+            playerDamage = 7;
+            playerHitChance = 1;
+            playerHp = 999999999;
+            goblinDamage = 0;
+            goblinHitChance = 0;
+            alert('The ground trembles beneath your feet, the goblins try to turn and run, but they are stuck. KILL THEM ALL.');
+            displayPlayerStats();
+            perkSelect.classList.add('hidden');
+            goldPerk.classList.remove('hidden');
             break;
     }
 });
