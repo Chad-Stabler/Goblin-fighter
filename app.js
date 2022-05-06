@@ -49,6 +49,7 @@ perkSelect.addEventListener('change', () => {
             displayPlayerStats();
             perkSelect.classList.add('hidden');
             goldPerk.classList.remove('hidden');
+            
             break;
     }
 });
